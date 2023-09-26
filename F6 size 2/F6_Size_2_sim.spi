@@ -1,0 +1,41 @@
+*** SPICE deck for cell F6_Size_2_sim{sch} from library DD2_Project
+*** Created on Tue Apr 12, 2022 12:23:07
+*** Last revised on Tue Apr 12, 2022 12:40:40
+*** Written on Tue Apr 12, 2022 12:40:43 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT DD2_Project__F6_Size_2 FROM CELL F6_Size_2{sch}
+.SUBCKT DD2_Project__F6_Size_2 A B C g
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 g A net@18 gnd nmos L=0.2U W=2.4U
+Mnmos@1 g C net@18 gnd nmos L=0.2U W=2.4U
+Mnmos@2 net@18 A net@7 gnd nmos L=0.2U W=2.4U
+Mnmos@3 net@18 B net@7 gnd nmos L=0.2U W=2.4U
+Mnmos@4 net@7 B gnd gnd nmos L=0.2U W=2.4U
+Mnmos@5 net@7 C gnd gnd nmos L=0.2U W=2.4U
+Mpmos@0 vdd A net@56 vdd pmos L=0.2U W=11.36U
+Mpmos@1 net@56 B g vdd pmos L=0.2U W=11.36U
+Mpmos@2 vdd A net@78 vdd pmos L=0.2U W=11.36U
+Mpmos@3 net@78 C g vdd pmos L=0.2U W=11.36U
+Mpmos@4 vdd C net@67 vdd pmos L=0.2U W=11.36U
+Mpmos@5 net@67 B g vdd pmos L=0.2U W=11.36U
+.ENDS DD2_Project__F6_Size_2
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: F6_Size_2_sim{sch}
+XF6_Size_@1 X Y Z out DD2_Project__F6_Size_2
+
+* Spice Code nodes in cell cell 'F6_Size_2_sim{sch}'
+Vdd vdd 0 dc 1.8
+Vin X 0 pulse 0 1.8 0.1n 0p 0p 5n 10n
+Vy Y 0 dc 0
+Vz Z 0 dc 1.8
+.trans 0 100n
+cload out 0 9fF
+.measure tpdr trig v(X) val=0.9 fall=1 TARG v(out) val=0.9 rise=1
+.measure tpdf trig v(X) val=0.9 rise=1 TARG v(out) val=0.9 fall=1
+.include F:\AUC\DD2\pro1\model.txt
+.END

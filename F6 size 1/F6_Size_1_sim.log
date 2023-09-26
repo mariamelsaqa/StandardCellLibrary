@@ -1,0 +1,28 @@
+Circuit: *** SPICE deck for cell F6_Size_1_sim{sch} from library DD2_Project
+
+Limiting rise time of source vin to 5e-010
+Limiting fall time of source vin to 5e-010
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Direct Newton iteration for .op point succeeded.
+
+tpdr=1.51324e-010 FROM 5.85e-009 TO 6.00132e-009
+tpdf=2.64233e-010 FROM 3.5e-010 TO 6.14233e-010
+
+
+Date: Tue Apr 12 12:20:17 2022
+Total elapsed time: 0.158 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 4008
+traniter = 3985
+tranpoints = 1603
+accept = 1413
+rejected = 190
+matrix size = 62
+fillins = 0
+solver = Normal
+Matrix Compiler1: 7.58 KB object code size  1.8/0.8/[0.5]
+Matrix Compiler2: 7.88 KB object code size  0.9/0.8/[0.4]
+

@@ -1,0 +1,26 @@
+Circuit: *** SPICE deck for cell NAND_Size_1_sim{sch} from library DD2_Project
+
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Direct Newton iteration for .op point succeeded.
+
+tpdr=1.49629e-010 FROM 5.7e-009 TO 5.84963e-009
+tpdf=1.82341e-010 FROM 3e-010 TO 4.82341e-010
+
+
+Date: Tue Apr 12 02:12:09 2022
+Total elapsed time: 0.161 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3668
+traniter = 3660
+tranpoints = 1527
+accept = 1349
+rejected = 178
+matrix size = 35
+fillins = 0
+solver = Normal
+Matrix Compiler1: 3.51 KB object code size  0.6/0.3/[0.2]
+Matrix Compiler2: 4.04 KB object code size  0.3/0.4/[0.3]
+

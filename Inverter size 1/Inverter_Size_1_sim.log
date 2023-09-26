@@ -1,0 +1,26 @@
+Circuit: *** SPICE deck for cell Inverter_Size_1_sim{sch} from library DD2_Project
+
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Direct Newton iteration for .op point succeeded.
+
+tpdr=7.31327e-011 FROM 5.7e-009 TO 5.77313e-009
+tpdf=1.09241e-010 FROM 3e-010 TO 4.09241e-010
+
+
+Date: Tue Apr 12 20:21:41 2022
+Total elapsed time: 0.121 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3767
+traniter = 3760
+tranpoints = 1648
+accept = 1465
+rejected = 183
+matrix size = 13
+fillins = 0
+solver = Normal
+Matrix Compiler1: 996 bytes object code size  0.2/0.1/[0.1]
+Matrix Compiler2: off  [0.1]/0.2/0.1
+

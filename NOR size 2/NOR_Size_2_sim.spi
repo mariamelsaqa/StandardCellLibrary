@@ -1,0 +1,35 @@
+*** SPICE deck for cell NOR_Size_2_sim{sch} from library DD2_Project
+*** Created on Tue Apr 12, 2022 06:14:36
+*** Last revised on Tue Apr 12, 2022 11:06:20
+*** Written on Tue Apr 12, 2022 11:06:26 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT DD2_Project__NOR_Size_2 FROM CELL NOR_Size_2{sch}
+.SUBCKT DD2_Project__NOR_Size_2 A B C Y
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 Y A gnd gnd nmos L=0.2U W=0.4U
+Mnmos@1 Y B gnd gnd nmos L=0.2U W=0.4U
+Mnmos@2 Y C gnd gnd nmos L=0.2U W=0.4U
+Mpmos@0 vdd A net@30 vdd pmos L=0.2U W=17.04U
+Mpmos@1 net@30 B net@29 vdd pmos L=0.2U W=17.04U
+Mpmos@2 net@29 C Y vdd pmos L=0.2U W=17.04U
+.ENDS DD2_Project__NOR_Size_2
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: NOR_Size_2_sim{sch}
+XNOR_Size@1 X Y Z out DD2_Project__NOR_Size_2
+
+* Spice Code nodes in cell cell 'NOR_Size_2_sim{sch}'
+Vdd vdd 0 dc 1.8
+Vin X 0 pulse 0 1.8 0.1n 400p 400p 5n 10n
+Vy Y 0 dc 0
+Vz Z 0 dc 0
+.trans 0 100n
+cload out 0 72fF
+.measure tpdr trig v(X) val=0.9 fall=1 TARG v(out) val=0.9 rise=1
+.measure tpdf trig v(X) val=0.9 rise=1 TARG v(out) val=0.9 fall=1
+.include F:\AUC\DD2\pro1\model.txt
+.END
